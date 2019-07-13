@@ -1,4 +1,3 @@
-<div class="col-md-8">
   <% @posts.each do |post| %>
     <div class="article">
       <h2>タイトル：<%= post.title %></h2>
@@ -7,13 +6,10 @@
       <p><%= link_to "続きを読む", post, class: "btn btn-info" %></p>
     </div>
   <% end %>
-</div>
-<div class="col-md-4">
+
   <div class="list-group">
     <!-- 5件だけ記事を表示するように制御します -->
-    <% @new_posts.each_with_index do |post, index| %>
-      <% break if index >= 5 %>
+    <% @new_posts.each do |post| %>
       <%= link_to post.title, post, class: "list-group-item" %>
     <% end %>
   </div>
-</div>
